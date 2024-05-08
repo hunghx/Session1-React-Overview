@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './app.css'
 export default class DashBoard extends Component {
+  
   render() {
     return (
         <div className="wrapper">

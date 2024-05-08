@@ -1,16 +1,29 @@
+import React, { Component } from 'react'
+import Login from './components/Login';
+import Student from './components/Student';
+import Register from './components/Register';
 
-import './App.css'
+export default class App extends Component {
 
-import Time from './components/Time'
-import Profile from './components/Profile'
-import DashBoard from './components/DashBoard'
+    constructor(){
+        super();
+        this.state = {
+            isLogin : true,
+            age : 28
+        }
+    }
+    
+    render() {
+        console.log("renderr",this.state.isLogin);
+    
+        return (
+            <>
+                <button type="button" onClick={()=>this.setState({...this.state,isLogin:true})}>Login</button>
+                <button type="button" onClick={()=>this.setState({...this.state,isLogin:false})}>Register</button>
+                {/* <Student /> */}
+                {this.state.isLogin ? <Login isLogin={true} /> : <Register />}
 
-function App() {
-  return (
-    <>
-        <DashBoard/>
-    </>
-  )
+            </>
+        )
+    }
 }
-
-export default App
